@@ -1,39 +1,40 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { checkServerStatus } from "@/lib/api";
 
-export function useStatus(interval = 4000) {
-    const [data, setData] = useState<any>(null);
-    const [loading, setLoading] = useState(true);
+export function useStatus(interval = 5000) {
+  const [data, setData] = useState<{ servers: unknown[]; updated: number } | null>(null);
+  const [loading, setLoading] = useState(true);
+  const inFlightRef = useRef(false);
 
-    useEffect(() => {
-        let alive = true;
+  useEffect(() => {
+    let alive = true;
 
-        async function load() {
-            try {
-                const res = await fetch("/api/status", {
-                    cache: "no-store",
-                });
-
-                const json = await res.json();
-
-                if (alive) {
-                    setData(json);
-                    setLoading(false);
-                }
-            } catch {
-                if (alive) setLoading(false);
-            }
+    async function load() {
+      if (inFlightRef.current) return;
+      inFlightRef.current = true;
+      try {
+        const result = await checkServerStatus();
+        if (alive) {
+          setData({ servers: result, updated: Date.now() });
+          setLoading(false);
         }
+      } catch (err) {
+        console.error("Status error:", err);
+        if (alive) setLoading(false);
+      } finally {
+        inFlightRef.current = false;
+      }
+    }
 
-        load();
-        const timer = setInterval(load, interval);
+    void load();
+    const timer = setInterval(() => void load(), interval);
+    return () => {
+      alive = false;
+      clearInterval(timer);
+    };
+  }, [interval]);
 
-        return () => {
-            alive = false;
-            clearInterval(timer);
-        };
-    }, [interval]);
-
-    return { data, loading };
+  return { data, loading };
 }

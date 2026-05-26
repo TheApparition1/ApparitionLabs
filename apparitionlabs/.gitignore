@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# tauri / rust build output (keep IDE linters away)
+src-tauri/target/
+src-tauri/gen/
+
+# system garbage
+node_modules
+.vscode
+

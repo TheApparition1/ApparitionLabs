@@ -1,7 +1,5 @@
-import ServerGrid from "@/components/ServerGrid";
+import { MonitoringDashboard } from "@/components/monitoring/MonitoringDashboard";
 
 export default function Home() {
-  return (
-      <ServerGrid />
-  );
+  return <MonitoringDashboard />;
 }
