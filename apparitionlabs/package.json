@@ -1,7 +1,13 @@
 {
   "name": "apparitionlabs",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "license": "GPL-3.0",
+  "author": "Samuel Dingle",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/samueldingle/ApparitionLabs"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
