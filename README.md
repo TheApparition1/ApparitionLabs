@@ -6,6 +6,15 @@ real-time notifications of any issues. It connects using standard web ports like
 
 
 
+
+
+
+<img width="1704" height="1112" alt="Screenshot 2026-05-28 at 9 08 41 am" src="https://github.com/user-attachments/assets/0b692fdf-541d-4a47-9321-6f58e3fbb6e8" />
+
+
+
+
+
 ## License
 
 [GPL 3.0](https://choosealicense.com/licenses/gpl-3.0/)
@@ -30,6 +39,8 @@ This application is installed like any other tauri application. You can either d
   npm run build
   npm run tauri build
 ```
+
+## AI was used for light bugfixing in the code, there was no use in the creation of the app other than bugfixing.
     
 ## FAQ
 
