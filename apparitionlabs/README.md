@@ -6,9 +6,6 @@ real-time notifications of any issues. It connects using standard web ports like
 
 
 
-
-
-
 ## License
 
 [GPL 3.0](https://choosealicense.com/licenses/gpl-3.0/)
@@ -19,6 +16,8 @@ real-time notifications of any issues. It connects using standard web ports like
 **Frontend:** Next.js, React, TailwindCSS, shadcn/ui
 
 **Backend:** Tauri (Rust), SQLite
+
+#### I HIGHLY recommend building the Project yourself if you are using a Windows PC. I developed this program on a MacBook and am unable to confirm if the application works as desired.
 
 
 ## Installation

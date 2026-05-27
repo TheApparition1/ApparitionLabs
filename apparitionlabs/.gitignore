@@ -47,4 +47,6 @@ src-tauri/gen/
 # system garbage
 node_modules
 .vscode
+ 
+ 
 
