@@ -40,14 +40,18 @@ The app uses a simple HTTP request to check the status of each server. It will a
 TCP is also used to directly ping servers if you choose not to use a cloudflare tunnel or other solution if desired.
 
 
-
-
-
-#### Does this Pose a security risk?
+#### Does this pose a security risk?
 No. As ApparitionLabs does not require software to be installed on the server that is being monitored, it is safe to use.
 As the app is a client-side application, it does not have access to any sensitive information on the server. As aforementioned, it communicates using standard web ports like 443 (HTTPS) or 8006 for Proxmox Virtual Environment.
 
+#### Do I need to pay for this?
+No. ApparitionLabs is free and open source software. You can use it for free and modify it as you like.
 
+#### Can I use this for commercial purposes?
+Yes. You can use this for commercial purposes. However, you must comply with the GPL 3.0 license.
+
+#### Can I use this to control servers?
+At the time, this is not possible. However down the line this is planned to either have terminal capabilities or at least the ability to open SSH in your system terminal.
 
 ## Author
 
